@@ -1,3 +1,12 @@
+## Step 0:
+Read this: http://rakeroutes.com/blog/deliberate-git/
+
+> But Patrick, this article is so long ...
+
+**Read it! Read it and memorize it!** All of this will be on your final exam!
+
+> Okay ... :(
+
 ## Start interactive rebase, using the 9 most recent commits.
 `git rebase -i HEAD~9`
 
@@ -6,7 +15,7 @@
 - If you want to combine two commits into one
 - If you want to change the order of two or more commits
 
-## Pull a branch named "some-branch" that somebody else force-pushed, without any conflicts
+## Pull a branch named "some-branch" that somebody else force-pushed, without any conflicts.
 ```git
 git checkout some-branch
 git fetch
