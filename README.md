@@ -1,12 +1,12 @@
-## Interactive Rebase starten, mit den letzten 9 Commits
+## Start interactive rebase, using the 9 most recent commits.
 `git rebase -i HEAD~9`
 
-## Einen lokalen Branch namens mein-branch pullen, der von jemand anderem mit "force" gepusht wurde
+## Pull a branch that somebody else force-pushed, named "some-branch", which you have previously pulled.
 ```git
-git checkout mein-branch
+git checkout some-branch
 git fetch
-git reset --hard origin/mein-branch
+git reset --hard origin/some-branch
 ```
 
-## Alle Remote Branches holen und gleizeitig alle lokalen Referenzen auch Branches, die remote nicht mehr existieren, entfernen
+## Fetch all remote branches and at the same time delete all local references to branches that do not exist anymore on the remote server.
 `git fetch --all -p`
