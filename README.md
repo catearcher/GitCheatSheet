@@ -31,7 +31,7 @@ git reset --hard origin/some-branch
 
 ## Useful Aliases
 
-Git aliases are awesome! Don't want to remember ecxact commands like `git fetch --all -p`? Simply add an alias to your global `.gitconfig` file: `fap = git fetch --all -p`. Now you can just write `git fap`.
+Git aliases are awesome! Don't want to remember exact commands like `git fetch --all -p`? Simply add an alias to your global `.gitconfig` file: `fap = git fetch --all -p`. Now you can just write `git fap`.
 
 I have collected and written some lot of aliases that I use almost every day. Just add all of the following to your **global** `.gitconfig` File:
 ```git
