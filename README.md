@@ -7,6 +7,13 @@ Read this: http://rakeroutes.com/blog/deliberate-git/
 
 > Okay ... :(
 
+Also, before doing anything else, run this command:
+```git
+git config --global pull.ff only
+```
+
+This prevents git from automatically creating merge commits when pulling changes from the remote. We don't want those merge commits because thay can completely mess up your history as soon as you try rebasing your branch, leading to lots of duplicate commits, and making rebasing completely impossible. 
+
 ## Start interactive rebase, using the 9 most recent commits.
 `git rebase -i HEAD~9`
 
