@@ -77,4 +77,5 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   re = reset --hard HEAD
   co = checkout
   cp = cherry-pick
+  done = branch --merged
 ```
