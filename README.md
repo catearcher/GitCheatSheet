@@ -44,7 +44,7 @@ I have collected and written some lot of aliases that I use almost every day. Ju
 ```git
 [alias]
   # List all aliases
-  list = !git config -l | grep alias | cut -c 7-
+  aliases = !git config -l | grep alias | cut -c 7-
 
   # Prettier version of git log
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
