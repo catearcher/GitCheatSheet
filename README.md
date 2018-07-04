@@ -58,9 +58,9 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   # Fetch all branches from remote and clean up your local references
   fap = !git fetch --all -p && git prune && :
 
-  # Use this if you want to pull a branch that was force pushed by somebody else.
-  # Usage: `git forcefetch name-of-the-branch`
-  forcefetch = !git checkout $1 && git fetch && git reset --hard origin/$1 && :
+  # Use this if you want to replace your local branch with the latest version of the remote branch (e.g. if someone else did a force-push and you simply want to continue on top of their work).
+  # Usage: `git forcepull`
+  forcepull = !git fetch && branchname=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` && git reset --hard origin/$branchname && :
 
   # Remove untracked files and folders from the working tree
   boom = clean -df
