@@ -29,10 +29,14 @@ git fetch
 git reset --hard origin/some-branch
 ```
 
+Or simply use the `git forcepull` alias (see section [Useful Aliases](#useful-aliases)) after checking out the branch.
+
 *When to use*: If you have a branch in your local repo that you have previously pushed, but which was changed in the meantime by somebody else who then force-pushed. Especially useful on live servers.
 
 ## Fetch all remote branches and at the same time delete all local references to branches that do not exist anymore on the remote server.
 `git fetch --all -p`
+
+Or simply use the `git fap` alias (see section [Useful Aliases](#useful-aliases)) which does the same thing, plus some additional cleanup.
 
 *When to use*: All the time.
 
