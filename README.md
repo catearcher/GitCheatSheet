@@ -68,7 +68,7 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   forcepull = !git fetch && branchname=`git rev-parse --symbolic-full-name --abbrev-ref HEAD` && git reset --hard origin/$branchname && :
 
   # Reset and remove untracked files and folders from the working tree
- boom=!git reset --hard && git clean -df && :
+  boom=!git reset --hard && git clean -df && :
 
   # Undo some commits and put the changes from those commits onto the stage.
   # Example: `git rewind HEAD~3` to undo the last 3 commits.
