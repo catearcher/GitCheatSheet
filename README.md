@@ -77,6 +77,9 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   # Commit changes and write a commit message.
   # Example: `git cm "This is my commit summary"`
   cm = commit -a -m
+  
+  # Shows an overview of file changes of the current branch compared to master
+  changes = diff --stat master...HEAD
 
   ## Some short aliases for simple commands that are used frequently
   re = reset --hard HEAD
