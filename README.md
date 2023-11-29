@@ -54,7 +54,7 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
 
   # Another version of git log, showing which files were actually modified in each commit
-  ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%C(green)\\ [%cn]--decorate --numstat
+  ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%C(green)\\ [%cn] --decorate --numstat
 
   # Switch to the previous branch (if you call `git toggle` again, git switches back to the first branch)
   toggle = checkout -
@@ -77,13 +77,17 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   # Commit changes and write a commit message.
   # Example: `git cm "This is my commit summary"`
   cm = commit -a -m
-  
-  # Shows an overview of file changes of the current branch compared to master
-  changes = diff --stat master...HEAD
+
+  # Fast-forward an existing tag to the current commit, both locally and on the remote.
+  # Example: `git fftag v1.0` will delete the remote "v1.0" tag, overwrite the local "v1.0" tag with a new one and then push the new tag to the remote.
+  fftag = !1>/dev/null && git push origin :refs/tags/$1 && git tag -fa $1 && git push origin --tags && :
+
+  # Shows an overview of file changes of the current branch compared to main
+  changes = diff --stat main...HEAD
 
   ## Some short aliases for simple commands that are used frequently
   re = reset --hard HEAD
   co = checkout
   cp = cherry-pick
-  done = branch --merged
+  done = !git branch --merged | egrep --invert-match '(main|master|\\* )'
 ```
