@@ -7,12 +7,15 @@ Read this: http://rakeroutes.com/blog/deliberate-git/
 
 > Okay ... :(
 
-Also, before doing anything else, run this command:
+Also, before doing anything else, run these commands:
 ```git
 git config --global pull.ff only
+git config --global url."https://".insteadOf "git://"
 ```
 
-This prevents git from automatically creating merge commits when pulling changes from the remote. We don't want those merge commits because thay can completely mess up your history as soon as you try rebasing your branch, leading to lots of duplicate commits, and making rebasing completely impossible. 
+The first one prevents git from automatically creating merge commits when pulling changes from the remote. We don't want those merge commits because thay can completely mess up your history as soon as you try rebasing your branch, leading to lots of duplicate commits, and making rebasing completely impossible.
+
+The second one prevents `npm install` from getting stuck on outdated dependencies that still use `git://` URLs for downloading their non-npm dependencies. Those URLs can slow down `npm install` considerably, and by forcing git to automatically replace them with https URLs you will prevent yourself from running into hard-to-debug issues when checking out old repos and installing their dependencies.
 
 ## Start interactive rebase, using the 9 most recent commits.
 `git rebase -i HEAD~9`
