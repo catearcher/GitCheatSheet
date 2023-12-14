@@ -54,10 +54,13 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   aliases = !git config -l | grep alias | cut -c 7-
 
   # Prettier version of git log
-  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+  lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ar)%C(bold blue)<%an>%Creset' --abbrev-commit
+
+  # Like the lg command (see above), but also include a diff for each commit
+  ld = lg -p
 
   # Another version of git log, showing which files were actually modified in each commit
-  ll = log --pretty=format:%C(yellow)%h%Cred%d\\ %Creset%s%C(green)\\ [%cn] --decorate --numstat
+  ll = log --pretty='format:%Cred%h%C(yellow)%d %Creset%s%C(bold blue) [%cn]' --decorate --numstat
 
   # Switch to the previous branch (if you call `git toggle` again, git switches back to the first branch)
   toggle = checkout -
