@@ -91,9 +91,12 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   # Shows an overview of file changes of the current branch compared to main
   changes = diff --stat main...HEAD
 
-  ## Some short aliases for simple commands that are used frequently
+  # Some short aliases for simple commands that are used frequently
   re = reset --hard HEAD
   co = checkout
   cp = cherry-pick
   done = !git branch --merged | egrep --invert-match '(main|master|\\* )'
+
+  # Deletes all local branches that have been merged into the current branch
+  dropdone = !git done | xargs -n 1 git branch -d
 ```
