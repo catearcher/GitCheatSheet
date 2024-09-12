@@ -95,7 +95,7 @@ I have collected and written some lot of aliases that I use almost every day. Ju
   re = reset --hard HEAD
   co = checkout
   cp = cherry-pick
-  done = !git branch --merged | egrep --invert-match '(main|master|\\* )'
+  done = !git branch --merged | egrep --invert-match '(main|master|release/|\\* )'
 
   # Deletes all local branches that have been merged into the current branch
   dropdone = !git done | xargs -n 1 git branch -d
