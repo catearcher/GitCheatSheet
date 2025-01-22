@@ -1,5 +1,5 @@
 ## Step 0:
-Read this: http://rakeroutes.com/blog/deliberate-git/
+Read this article: [Deliberate Git](https://strangeleaflet.com/blog/deliberate-git)
 
 > But Patrick, this article is so long ...
 
