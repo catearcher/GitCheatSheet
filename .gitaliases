@@ -44,7 +44,7 @@
   re = reset --hard HEAD
   co = checkout
   cp = cherry-pick
-  done = !git branch --merged | egrep --invert-match '(main|master|release/|\\* )'
+  done = !git branch --merged | egrep --invert-match '(main|master|release/|\\* |\\+ )'
 
   # Deletes all local branches that have been merged into the current branch
   dropdone = !git done | xargs -n 1 git branch -d
